@@ -1,0 +1,19 @@
+{
+  "name": "weconnect",
+  "version": "1.0.0",
+  "description": "Social network to connect non profit organisations with volunteers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nageshsk/WeConnect.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nageshsk/WeConnect/issues"
+  },
+  "homepage": "https://github.com/nageshsk/WeConnect#readme"
+}
