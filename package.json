@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/nageshsk/WeConnect/issues"
   },
-  "homepage": "https://github.com/nageshsk/WeConnect#readme"
+  "homepage": "https://github.com/nageshsk/WeConnect#readme",
+  "dependencies": {
+    "async": "^2.1.2",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mysql": "^2.11.1",
+    "sync-request": "^3.0.1"
+  }
 }
