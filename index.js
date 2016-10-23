@@ -50,72 +50,18 @@ router.post('/api/:email', function (req, res) {
         days: body.days,
     }
 
-    var queryStr = "INSERT INTO supporter VALUES ("+user.name+", "+user.email", "+user.phone+", "+user.time+", "+user.money+", "+user.days+");";
+    var queryStr = "INSERT INTO supporter VALUES ("+user.name+", "+user.email+", "+user.phone+", "+user.time+", "+user.money+", "+user.days+");";
     console.log("Query is " + queryStr);
 
     connection.query(queryStr, function (err, rows, fields) {
         if (err) {
             console.log(err);
-        } else {
-            console.log('The solution is: ', rows);
-            if (rows == undefined || rows.length == 0) {
-                try {
-                    connection.query('INSERT INTO family_house SET ?', user, function (err, res) {
-                        console.log('Last inserted ID:', res);
-                        if (err) throw err;
-                        console.log('Last inserted ID:', body.name);
-                    });
-
-                } catch (e) {
-                    console.log("Error occured" + e);
-
-                }
-            } else {
-                try {
-                    connection.query("UPDATE family_house SET delete_id=0 WHERE developer = '" + user.developer + "AND address = '" + user.address + "' AND company= '" + user.company + "'", function (err, res) {
-                        if (err) {
-                            console.log(err);
-                        }
-                    });
-
-                } catch (e) {
-                    console.log("Error occured" + e);
-                }
-            }
         }
-    });
-    res.writeHeader(200, {
+        res.writeHeader(200, {
         "Content-Type": "application/json"
     });
     res.end();
-
 });
-
-// Mark Delete True
-app.get('/api/houses/markDelete', function (req, res) {
-
-    try {
-        connection.query('UPDATE family_house SET delete_id=1', function (err, res) {
-            if (err) {
-                console.log(err);
-            }
-
-        });
-
-    } catch (e) {
-        console.log("Error occured" + e);
-
-    }
-    res.writeHeader(200, {
-        "Content-Type": "application/json"
-    });
-    res.end();
-
-});
-
-
-
-
 
 connection.connect();
 
