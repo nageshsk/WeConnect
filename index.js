@@ -50,7 +50,7 @@ router.post('/api/:email', function (req, res) {
         days: body.days,
     }
 
-    var queryStr = "INSERT INTO supporter VALUES ("+user.name+", "+user.email", "+user.phone+", "+user.time+", "++")from family_house where developer = '" + user.developer + "' AND address = '" + user.address + "' AND company = '" + user.company + "'";
+    var queryStr = "INSERT INTO supporter VALUES ("+user.name+", "+user.email", "+user.phone+", "+user.time+", "+user.money+", "+user.days+");";
     console.log("Query is " + queryStr);
 
     connection.query(queryStr, function (err, rows, fields) {
